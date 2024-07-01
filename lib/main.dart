@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Scaffold(
-        body: const ScreenContainer(
+        body: ScreenContainer(
           color1: Colors.blueGrey,
           color2: Colors.lightGreen,
         ),

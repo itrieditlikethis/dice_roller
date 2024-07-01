@@ -1,3 +1,4 @@
+import 'package:dice_roller/dice_roller.dart';
 import 'package:flutter/material.dart';
 
 class ScreenContainer extends StatelessWidget {
@@ -21,9 +22,7 @@ class ScreenContainer extends StatelessWidget {
         ),
       ),
       child: const Center(
-        child: Text(
-          'pic of a dice',
-        ),
+        child: DiceRoller(),
       ),
     );
   }
