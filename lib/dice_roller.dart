@@ -41,6 +41,7 @@ class _DiceRoller extends State<DiceRoller> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image(
+          width: 300,
           image: AssetImage('assets/images/dice-$currentDiceRoll.png'),
         ),
         TextButton(
