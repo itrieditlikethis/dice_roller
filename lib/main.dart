@@ -1,3 +1,4 @@
+import 'package:dice_roller/dice_model.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +21,7 @@ void main() {
               spacing: 30,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('dice'),
+                const DiceModel(),
                 const Text('text'),
                 TextButton(
                   onPressed: () {},
