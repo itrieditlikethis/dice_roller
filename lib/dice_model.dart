@@ -20,20 +20,13 @@ class DiceModel extends StatelessWidget {
         ),
       ),
       child: GridView.count(
-        crossAxisCount: 3,padding: EdgeInsets.all(30.0),
+        crossAxisCount: 3,
+        padding: EdgeInsets.all(30.0),
         crossAxisSpacing: 24.0,
         mainAxisSpacing: 24.0,
-        children: [
-          DiceDot(),
-          DiceDot(),
-          DiceDot(),
-          DiceDot(),
-          DiceDot(),
-          DiceDot(),
-          DiceDot(),
-          DiceDot(),
-          DiceDot(),
-        ],
+        children: List.generate(9, (int index) {
+          return DiceDot();
+        },),
       ),
     );
   }
