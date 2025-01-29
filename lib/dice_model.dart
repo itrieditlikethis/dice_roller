@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
+//TODO stateful
 class DiceModel extends StatelessWidget {
+  final currentNumberState = 1;
+
   const DiceModel({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final currentDiceEnum = DiceNumber.values[currentNumberState - 1];
     return Container(
       width: 210,
       height: 210,
@@ -20,20 +24,26 @@ class DiceModel extends StatelessWidget {
         ),
       ),
       child: GridView.count(
-        crossAxisCount: 3,
-        padding: EdgeInsets.all(30.0),
-        crossAxisSpacing: 24.0,
-        mainAxisSpacing: 24.0,
-        children: List.generate(9, (int index) {
-          return DiceDot();
-        },),
+          crossAxisCount: 3,
+          padding: EdgeInsets.all(30.0),
+          crossAxisSpacing: 24.0,
+          mainAxisSpacing: 24.0,
+          children: [...currentDiceEnum.value.map((el) => DiceDot(isVisible: el))]
+        // List.generate(
+        //   9,
+        //   (int index) {
+        //     return DiceDot(index: index,);
+        //   },
+        // ),
       ),
     );
   }
 }
 
 class DiceDot extends StatelessWidget {
-  const DiceDot({super.key});
+  const DiceDot({super.key, required this.isVisible});
+
+  final bool isVisible;
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +51,24 @@ class DiceDot extends StatelessWidget {
       width: 24,
       height: 24,
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: isVisible ? Colors.black : Colors.transparent,
         shape: BoxShape.circle,
       ),
     );
   }
+}
+
+enum DiceNumber {
+  one(value: <bool>[false, false, false, false, true, false, false, false, false,]),
+  two(value: <bool>[false, false, true, false, false, false, true, false, false,]),
+  three(value: <bool>[true, false, false, false, true, false, false, false, true,]),
+  four(value: <bool>[true, false, true, false, false, false, true, false, true,]),
+  five(value: <bool>[true, false, true, false, true, false, true, false, true,]),
+  six(value: <bool>[true, false, true, true, false, true, true, false, true,]);
+
+  final List value;
+
+  const DiceNumber({
+    required this.value,
+  });
 }
