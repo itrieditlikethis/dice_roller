@@ -25,7 +25,11 @@ void main() {
                 const Text('text'),
                 TextButton(
                   onPressed: () {},
-                  child: Text('tap to bring dice'),
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    textStyle: const TextStyle(fontSize: 30),
+                  ),
+                  child: const Text('Bring'),
                 ),
               ],
             ),
