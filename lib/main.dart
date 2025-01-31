@@ -17,22 +17,7 @@ void main() {
             ),
           ),
           child: Center(
-            child: Column(
-              spacing: 30,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const DiceModel(),
-                const Text('text'),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    textStyle: const TextStyle(fontSize: 30),
-                  ),
-                  child: const Text('Bring'),
-                ),
-              ],
-            ),
+            child: DiceModel()
           ),
         ),
       ),
